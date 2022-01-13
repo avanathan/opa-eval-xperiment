@@ -13,3 +13,21 @@ But if you
 2. Select word "hello" on line 21
 3. Click on "Evaluate Selection" in top right corner
 4. You will see valid text in output panel
+
+## Solution
+```
+opa eval --input input.json  --data test.rego  --package "play" "data.play.hello"
+```
+
+Basically this is how we can mimic playground using eval:
+
+```
+opa eval \
+  --input <path to input.json file> \
+  --data <path to data.json file> \
+  --data <path to rego file> \
+  --import <import 1 from rego file> \
+  --import <import n from rego file> \
+  --package <package from rego file> \
+  '<query>'
+```
